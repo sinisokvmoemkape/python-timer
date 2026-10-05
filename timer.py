@@ -4,6 +4,8 @@ import time
 info = []
 txt = 'Введите час: '
 txt2 = 'Введите минуту: '
+name = input('Введите название своего Таймера: ')
+
 while True:
     try:
         ahour = info.append(int(input(txt)))
@@ -18,6 +20,14 @@ while True:
     except ValueError:
         print('вводите только целые числа')
         continue
+
+
+time_make = data.datetime.now()
+hour_make = time_make.hour
+year_make = time_make.year
+minute_make = time_make.minute
+
+
 hour1 = info[0] 
 minute1 = info[1]
 print(f'Время конца таймера: {hour1} : {minute1}')
@@ -33,6 +43,11 @@ while True:
         break
 print(f'\n{hour1} : {minute1} - ВРЕМЯ ВЫШЛО!!!')
 
+file = open('history.txt', 'a')
+file.write(f'''\nНазвание Таймера - {name}
+Время Создание Таймера - {hour_make} : {minute_make} Год - {year_make}
+Время окончания таймера - {hour1} : {minute1} Год - {year}''')
+file.close()
 
     
 
