@@ -1,6 +1,12 @@
+ 
 import datetime as data
 import time
 
+import os
+os.system('python -m venv venv')
+os.system('source venv/bin/activate')
+os.system('pip install -r requirements.txt')
+from playsound3 import playsound
 info = []
 txt = 'Введите час: '
 txt2 = 'Введите минуту: '
@@ -42,12 +48,22 @@ while True:
     if hour1 == hour and minute1 == minute:
         break
 print(f'\n{hour1} : {minute1} - ВРЕМЯ ВЫШЛО!!!')
-
 file = open('history.txt', 'a')
 file.write(f'''\nНазвание Таймера - {name}
 Время Создание Таймера - {hour_make} : {minute_make} Год - {year_make}
 Время окончания таймера - {hour1} : {minute1} Год - {year}''')
 file.close()
+point = False
+playsound('melody.mp3',block=False)
+# while point == False:
+#     playsound('melody.mp3',block=False)
+#     enter = (input('нажмите ENTER'))
+#     if enter == None:
+#         point == True
+#     if point == True:
+#         print('Уже проснулись?')
+#         os.system('pause')
+#         break
 
     
 
