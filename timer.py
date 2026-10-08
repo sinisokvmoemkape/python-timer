@@ -49,13 +49,9 @@ file.write(f'''\nНазвание Будильника - {name}
 Время окончания Будильника - {hour1} : {minute1} Год - {year}''')
 file.close()
 info.clear()
-# while True:
+print('Пора вставать')
 playsound('melody.mp3')
-    # if sound.is_alive:
-    #         time.sleep(0.5)
-    #         if not sound.is_alive:
-    #             sound.stop()
-                
+
  
     
     
